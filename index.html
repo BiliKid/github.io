@@ -331,7 +331,7 @@
       
         
           
-            <h3 id="5-2-3"><a href="#5-2-3" class="headerlink" title="5.2-3"></a>5.2-3</h3><p>Wanna known if a person’s life is predictable. Suppose there is a procedure like this:</p>
+            <p>Wanna known if a person’s life is predictable. Suppose there is a procedure like this:</p>
 <p>$$<br>P(l\quad p)=\begin{cases}<br>true,\quad life \ is \ predictable\\<br>false, \quad life \ is \ unpredictable<br>\end{cases}<br>$$</p>
 <p>and we got a procedure to test if it is correct:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(define diag                </span><br><span class="line">  (lambda (p)              </span><br><span class="line">    (if (P p p)              </span><br><span class="line">        (other-than (p p))    </span><br><span class="line">        false)))</span><br></pre></td></tr></table></figure>
