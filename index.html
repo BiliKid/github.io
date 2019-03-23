@@ -260,7 +260,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/test-formula-in-latex/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/life_is_unpredictable/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="bilikid">
@@ -279,7 +279,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/01/test-formula-in-latex/" itemprop="url">test_formula_in_latex</a></h1>
+                <a class="post-title-link" href="/2018/09/01/life_is_unpredictable/" itemprop="url">a proof of "life is unpredictable"</a></h1>
         
 
         <div class="post-meta">
@@ -331,8 +331,14 @@
       
         
           
-            <h3 id="5-2-3"><a href="#5-2-3" class="headerlink" title="5.2-3"></a>5.2-3</h3><p>First, get the expection num of one dice, and multipy by <em>n</em></p>
-<p>$$<br> \sum_{i=1}^{6}\frac{i}{6}n<br>$$</p>
+            <h3 id="5-2-3"><a href="#5-2-3" class="headerlink" title="5.2-3"></a>5.2-3</h3><p>Wanna known if a person’s life is predictable. Suppose there is a procedure like this:</p>
+<p>$$<br>P\left ( l\quad p \right )=\left{\begin{matrix}<br>true &amp; predictable\<br>false &amp; unpredictable<br>\end{matrix}\right.<br>$$</p>
+<p>and we got a procedure to test if it is correct:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(define diag                </span><br><span class="line">  (lambda (p)              </span><br><span class="line">    (if (P p p)              </span><br><span class="line">        (other-than (p p))    </span><br><span class="line">        false)))</span><br></pre></td></tr></table></figure>
+<p>where other-than’s definition is:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(define other-than</span><br><span class="line">  (lambda (x)</span><br><span class="line">    (if (eq? x &apos;a)</span><br><span class="line">        &apos;b</span><br><span class="line">        &apos;a)))</span><br></pre></td></tr></table></figure>
+<p>other-than is always output the opposite of input. so if applied diag to itself—(diag diag), and <em>(P diag diag)</em> get two possible value: if a person’s life is predictable, then other-than get the conflicting result; if a person’s life is unpredictable, then we get a false, so it is predicatable, which is also a conflict. Then we get to known life is unpredictable.</p>
+<p>this proof is based on SICP.:)</p>
 
           
         
